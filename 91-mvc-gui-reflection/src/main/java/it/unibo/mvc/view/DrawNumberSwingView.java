@@ -110,7 +110,6 @@ public final class DrawNumberSwingView implements DrawNumberView {
             );
             default -> throw new IllegalStateException("Unknown game state");
         }
-        controller.resetGame();
     }
 
     private void plainMessage(final String msg) {
