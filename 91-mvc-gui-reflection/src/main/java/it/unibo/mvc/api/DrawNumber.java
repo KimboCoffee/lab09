@@ -18,4 +18,6 @@ public interface DrawNumber {
      * @return the result of the guess
      */
     DrawResult attempt(int n);
+
+    void decreaseAttempts();
 }
