@@ -21,9 +21,11 @@ public class DrawNumberNewControllerImpl implements DrawNumberController {
     @Override
     public void newAttempt(int n) {
         if (views.isEmpty()){
-            System.out.println("There are no views attached !");
+            System.out.println("There are no views attached");
         } else {
-            this.model.attempt(n);
+            for (DrawNumberView dnv : views){
+                Objects.requireNonNull(dnv, "The attached view is null").result(model.attempt(n));
+            }
         }
     }
 
