@@ -7,6 +7,7 @@ import java.util.Objects;
 import it.unibo.mvc.api.DrawNumber;
 import it.unibo.mvc.api.DrawNumberController;
 import it.unibo.mvc.api.DrawNumberView;
+import it.unibo.mvc.api.DrawResult;
 
 public class DrawNumberNewControllerImpl implements DrawNumberController {
 
@@ -25,6 +26,10 @@ public class DrawNumberNewControllerImpl implements DrawNumberController {
         } else {
             for (DrawNumberView dnv : views){
                 Objects.requireNonNull(dnv, "The attached view is null").result(model.attempt(n));
+            }
+            model.decreaseAttempts();
+            if (model.attempt(n) == DrawResult.YOU_WON || model.attempt(n) == DrawResult.YOU_LOST){
+                this.resetGame();
             }
         }
     }
