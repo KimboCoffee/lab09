@@ -20,4 +20,8 @@ public class Controller {
     public File getCurrentFile() {
         return this.currentFile;
     }
+
+    public String getCurrentFilePath() {
+        return this.currentFile.getAbsolutePath();
+    }
 }
