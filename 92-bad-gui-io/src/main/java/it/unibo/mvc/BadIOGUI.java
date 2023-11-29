@@ -71,6 +71,12 @@ public class BadIOGUI {
                 }
             }
         });
+        read.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                System.out.println("This string is going to be printed on stdout"); //NOPMD: it is asked to print on stdout
+            }
+        });
     }
 
     private void display() {
