@@ -20,7 +20,7 @@ public class Controller {
     public Controller() {
         this(new File(
             System.getProperty("user.home") +
-            File.separator +
+            System.getProperty("file.separator") +
             "output.txt"
         ));
     }
