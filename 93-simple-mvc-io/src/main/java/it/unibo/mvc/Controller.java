@@ -17,6 +17,14 @@ public class Controller {
         this.currentFile = currentFile;
     }
 
+    public Controller() {
+        this(new File(
+            System.getProperty("user.home") +
+            File.separator +
+            "output.txt"
+        ));
+    }
+
     public void setCurrentFile(final File newFile) {
         this.currentFile = newFile;
     }
