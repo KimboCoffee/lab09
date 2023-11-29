@@ -8,6 +8,9 @@ import javax.swing.JTextArea;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
 
 /**
  * A very simple program using a graphical interface.
@@ -31,6 +34,18 @@ public final class SimpleGUI {
         canvas.add(save, BorderLayout.SOUTH);
         frame.add(canvas);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        save.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                final Controller writer = new Controller();
+                try {
+                    writer.write(stringReader.getText());
+                } catch (final IOException e1) {
+                    e1.printStackTrace(); //NOPMD: allowed since it is only an exercise
+                }
+            }
+        });
     }
 
     /**
