@@ -62,7 +62,7 @@ public final class SimpleGUI {
     }
 
     /**
-     * Runs the apllication.
+     * Runs the application.
      * @param args unused
      */
     public static void main(final String[] args) {
