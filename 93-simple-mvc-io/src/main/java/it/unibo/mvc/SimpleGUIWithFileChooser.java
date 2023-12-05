@@ -30,7 +30,7 @@ public final class SimpleGUIWithFileChooser {
     private final Controller writer = new Controller();
 
     /**
-     * Filled to avoid build errors.
+     * Builds a GUI with a file chooser to write strings on a desired file
      */
     public SimpleGUIWithFileChooser() {
         final JPanel canvas = new JPanel();
