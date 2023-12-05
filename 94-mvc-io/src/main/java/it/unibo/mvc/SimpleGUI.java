@@ -35,9 +35,11 @@ public final class SimpleGUI {
         final JTextArea historyViewer = new JTextArea("See here the strings you printed...");
         canvas.add(historyViewer, BorderLayout.CENTER);
         final JButton print = new JButton("Print");
-        canvas.add(print, BorderLayout.SOUTH);
         final JButton seeHistory = new JButton("See history");
-        canvas.add(seeHistory, BorderLayout.SOUTH);
+        final JPanel southPanel = new JPanel();
+        southPanel.add(print);
+        southPanel.add(seeHistory);
+        canvas.add(southPanel, BorderLayout.SOUTH);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         print.addActionListener(new ActionListener() {
 
