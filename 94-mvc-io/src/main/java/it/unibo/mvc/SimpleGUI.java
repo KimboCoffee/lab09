@@ -18,7 +18,7 @@ import java.awt.event.ActionListener;
  */
 public final class SimpleGUI {
 
-    private final static int PROPORTION = 5;
+    private static final int PROPORTION = 5;
 
     private final JFrame frame = new JFrame();
     private final Controller printer = new SimpleController();
@@ -26,7 +26,7 @@ public final class SimpleGUI {
     /**
      * Standard constructor that sets up the view.
      */
-    public SimpleGUI(){
+    public SimpleGUI() {
         final JPanel canvas = new JPanel();
         frame.add(canvas);
         canvas.setLayout(new BorderLayout());
@@ -42,7 +42,7 @@ public final class SimpleGUI {
         print.addActionListener(new ActionListener() {
 
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(final ActionEvent e) {
                 printer.setNextString(reader.getText());
                 printer.printString();
             }
@@ -51,7 +51,7 @@ public final class SimpleGUI {
         seeHistory.addActionListener(new ActionListener() {
 
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(final ActionEvent e) {
                 historyViewer.setText(printer.getPrintHistory().toString());
             }
 
@@ -71,7 +71,7 @@ public final class SimpleGUI {
      * Runs the application.
      * @param args is unused.
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         new SimpleGUI().show();
     }
 }
