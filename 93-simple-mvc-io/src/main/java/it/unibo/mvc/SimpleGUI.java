@@ -66,7 +66,7 @@ public final class SimpleGUI {
      * @param args unused
      */
     public static void main(final String[] args) {
-        final SimpleGUI toBeSeen = new SimpleGUI();
+        final SimpleGUIWithFileChooser toBeSeen = new SimpleGUIWithFileChooser();
         toBeSeen.show();
     }
 }
