@@ -13,11 +13,24 @@ public interface Controller {
         System.out.println(toPrint); //NOPMD: it is asked to print on stdout
     }
 
-    public void setNextString(String newString);
+    /**
+     * Sets the value of the next string to be printed.
+     * @param newString is the new value to save.
+     */
+    void setNextString(String newString);
 
-    public String getNextString();
+    /**
+     * @return the value of the next string to be printed.
+     */
+    String getNextString();
 
-    public List<String> getPrintHistory();
+    /**
+     * @return a List of String containing all the strings that have been printed.
+     */
+    List<String> getPrintHistory();
 
-    public void printString();
+    /**
+     * Prints the next string to be printed.
+     */
+    void printString();
 }
