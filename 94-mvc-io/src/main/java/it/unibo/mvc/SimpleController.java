@@ -33,10 +33,30 @@ public final class SimpleController implements Controller {
     }
 
     /**
-     * Getter for the nextString field
-     * @return the next string to be printed
+     * Getter for the nextString field.
+     * @return the next string to be printed.
      */
     public String getNextString() {
         return this.nextString;
+    }
+
+    /**
+     * Getter for the history field.
+     * @return the history of printed strings as a list of strings.
+     */
+    public List<String> getPrintHistory() {
+        return List.copyOf(this.history);
+    }
+
+    /**
+     * Prints the next string on stdout and adds it to the history of printed strings.
+     */
+    public void printString() {
+        if (this.nextString == null) {
+            throw new IllegalStateException("The string is unset");
+        } else {
+            Controller.print(this.nextString);
+            this.history.add(this.nextString);
+        }
     }
 }
