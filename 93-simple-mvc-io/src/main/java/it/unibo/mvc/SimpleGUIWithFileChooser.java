@@ -24,13 +24,13 @@ import java.awt.event.ActionListener;
  */
 public final class SimpleGUIWithFileChooser {
 
-    private final int PROPORTION = 5;
+    private static final int PROPORTION = 5;
 
     private final JFrame frame = new JFrame("My second Java graphical interface"); //NOPMD: for now
     private final Controller writer = new Controller();
 
     /**
-     * Builds a GUI with a file chooser to write strings on a desired file
+     * Builds a GUI with a file chooser to write strings on a desired file.
      */
     public SimpleGUIWithFileChooser() {
         final JPanel canvas = new JPanel();
@@ -64,16 +64,15 @@ public final class SimpleGUIWithFileChooser {
         browse.addActionListener(new ActionListener() {
 
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(final ActionEvent e) {
                 final JFileChooser fileChooser = new JFileChooser();
                 final int result = fileChooser.showSaveDialog(currentFile);
-                if (result == JFileChooser.APPROVE_OPTION){
+                if (result == JFileChooser.APPROVE_OPTION) {
                     writer.setCurrentFile(new File(currentFile.getText()));
                 } else if (result != JFileChooser.CANCEL_OPTION) {
                     JOptionPane.showMessageDialog(browse, "An error has occured!");
                 }
             }
-            
         });
     }
 
