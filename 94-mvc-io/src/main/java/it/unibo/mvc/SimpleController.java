@@ -31,4 +31,12 @@ public final class SimpleController implements Controller {
             this.nextString = newString;
         }
     }
+
+    /**
+     * Getter for the nextString field
+     * @return the next string to be printed
+     */
+    public String getNextString() {
+        return this.nextString;
+    }
 }
