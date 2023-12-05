@@ -1,6 +1,5 @@
 package it.unibo.mvc;
 
-import java.io.File;
 import java.io.IOException;
 
 import javax.swing.JButton;
@@ -66,9 +65,10 @@ public final class SimpleGUIWithFileChooser {
             @Override
             public void actionPerformed(final ActionEvent e) {
                 final JFileChooser fileChooser = new JFileChooser();
-                final int result = fileChooser.showSaveDialog(currentFile);
+                final int result = fileChooser.showSaveDialog(browse);
                 if (result == JFileChooser.APPROVE_OPTION) {
-                    writer.setCurrentFile(new File(currentFile.getText()));
+                    writer.setCurrentFile(fileChooser.getSelectedFile());
+                    currentFile.setText(fileChooser.getSelectedFile().getAbsolutePath());
                 } else if (result != JFileChooser.CANCEL_OPTION) {
                     JOptionPane.showMessageDialog(browse, "An error has occured!");
                 }
