@@ -7,6 +7,8 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -54,6 +56,15 @@ public final class SimpleGUI {
             }
 
         });
+    }
+
+    private void show() {
+        final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        final int height = (int) screenSize.getHeight();
+        final int width = (int) screenSize.getWidth();
+        frame.setSize(width / PROPORTION, height / PROPORTION);
+        frame.setLocationByPlatform(true);
+        frame.setVisible(true);
     }
 
     /**
