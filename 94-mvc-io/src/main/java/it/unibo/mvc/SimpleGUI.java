@@ -72,6 +72,6 @@ public final class SimpleGUI {
      * @param args is unused.
      */
     public static void main(String[] args) {
-        
+        new SimpleGUI().show();
     }
 }
