@@ -24,6 +24,7 @@ public final class SimpleController implements Controller {
      * Setter for the next string to print.
      * @param newString is the new string to be printed.
      */
+    @Override
     public void setNextString(final String newString) {
         if (newString == null) {
             throw new IllegalArgumentException("String cannot be set to null");
@@ -36,6 +37,7 @@ public final class SimpleController implements Controller {
      * Getter for the nextString field.
      * @return the next string to be printed.
      */
+    @Override
     public String getNextString() {
         return this.nextString;
     }
@@ -44,6 +46,7 @@ public final class SimpleController implements Controller {
      * Getter for the history field.
      * @return the history of printed strings as a list of strings.
      */
+    @Override
     public List<String> getPrintHistory() {
         return List.copyOf(this.history);
     }
@@ -51,6 +54,7 @@ public final class SimpleController implements Controller {
     /**
      * Prints the next string on stdout and adds it to the history of printed strings.
      */
+    @Override
     public void printString() {
         if (this.nextString == null) {
             throw new IllegalStateException("The string is unset");
